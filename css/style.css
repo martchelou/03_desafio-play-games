@@ -1,0 +1,267 @@
+/* 
+ * Styles
+ */
+ /* Fonts Poppings from google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+/* Colors */
+:root {
+     /* base color */
+     --color-white: #fff;
+     --color-black: #000;
+     /* Grayscal */
+     --color-gray-lighter: #F0F0F0;
+     --color-gray-light: #ddd;
+     --color-gray: #ccc;
+     --color-gray-dark: #666;
+     --color-gray-darker: #333;
+     /* Project color */
+     --color-blue-dark: #2C3E50;
+     --color-green: #1ABC9C;
+     --color-dark: #383838;
+     --color-red: #DD7E92;
+}
+/* Minimal SS Reset from https://www.digitalocean.com/community/tutorials/css-minimal-css-reset with some custom items */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+    /* 
+     * The console.log() of css, ajuda a ver o elemento que tá fazendo caquinha no layout 
+     * dica do Kevin Powell https://youtu.be/ii-lSK2_Nu4
+     */
+    /* background-color: rgba(9, 100, 0, 0.2); */
+}
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+}
+ol, ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+a:link, a:visited {
+    color: var(--color-white);
+    text-decoration: none;
+}
+a:hover, a:active, a.active {
+    color: var(--color-gray);
+    text-decoration: underline;
+}
+p {
+    margin-bottom: 1em;
+}
+p:last-child {
+    margin-bottom: unset;
+}
+/* Elements */
+header {
+    padding: 1rem;
+    color: var(--color-white);
+    background-color: var(--color-green);
+}
+@media(max-width: 576px) {
+    .btn {
+        display: block;
+        margin: 1em auto
+    }
+    .d-flex {
+        flex-direction: column;
+    }
+    header .container nav {
+        margin-right: 1rem;
+    }
+    header .container nav ul li:not(.profile) {
+        display: none;
+    }
+}
+main {
+    padding: 1rem;
+    /* background-color: var(--color-blue-dark); */
+}
+hr {
+    border-radius: 6px;
+    border: 2px solid var(--color-green);
+}
+footer {
+    font-size: 1em;
+    padding: 2rem 1rem;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+}
+/* class */
+.container {
+    width: 96%;
+    max-width: 980px;
+    min-width: 360px;
+    margin: 0 auto;
+}
+.d-flex {
+    display: flex;
+    gap: 1rem;
+}
+.flex-row {
+    flex-direction: row;
+}
+.flex-col {
+    flex-direction: column;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.align-center {
+    align-items: center;
+}
+.card {
+    border-radius: 6px;
+    overflow: hidden;
+}
+.card-image {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.card-body {
+    padding: 1rem;
+}
+.card-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 1.1em;
+    padding-bottom: .5rem;
+}
+.text-success {
+    font-size: 3rem;
+    color: var(--color-green);
+}
+.shadow-sm {
+    box-shadow: 2px 2px 10px 2px var(--color-gray);
+}
+/* Ids */
+#news section {
+    padding: 1rem;
+    border-radius: 6px;
+}
+#news section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-green);
+}
+#news section .lead {
+    font-weight: 600;
+}
+#news section a {
+    color: var(--color-red);
+}
+#games {
+    padding: 1rem;
+}
+#games h1 {
+    font-weight: 600;
+    color: var(--color-green);
+    padding-bottom: 1rem;
+}
+#subscribe h1 {
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+#btn-to-top {
+    position: fixed;
+    bottom: 1rem; right: 1rem;
+    background-color: var(--color-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .6rem;
+    border-radius: 6px;
+}
+/* colors and spaces */
+.bg-light {
+    background-color: var(--color-gray-lighter);
+}
+/* spaces */
+.py-1 {
+    padding: calc(1em * .25) 0;
+}
+.py-2 {
+    padding: calc(1em * .5) 0;
+}
+.py-3 {
+    padding: calc(1em) 0;
+}
+.py-4 {
+    padding: calc(1em * 1.5) 0;
+}
+.my-5 {
+    padding: calc(1em * 3) 0;
+}
+.my-1 {
+    margin: calc(1em * .25) 0;
+}
+.my-2 {
+    margin: calc(1em * .5) 0;
+}
+.my-3 {
+    margin: calc(1em) 0;
+}
+.my-4 {
+    margin: calc(1em * 1.5) 0;
+}
+.my-5 {
+    margin: calc(1em * 3) 0;
+}
+/* image */
+.img-icon {
+    width: 35px; height: auto;
+    vertical-align: middle;
+}
+/* alignment */
+.text-center {
+    text-align: center;
+}
+/* Form */
+.form {
+    border: 1px solid var(--color-gray);
+    border-radius: 6px;
+    display: block;
+    background-color: var(--color-gray-lighter);
+    padding: 1rem;
+  }
+.form .form__field label {
+    display: inline-block;
+    font-weight: bold;
+}
+.form .form__field .form-control {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 0 3px #ddd inset;
+    color: #666;
+    height: 33px;
+    line-height: 24px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+/* btns */
+.btn {
+    font-size: 1.2rem;
+    padding: .5em 1em;
+    border-radius: 4px;
+}
+.btn-danger {
+    color: var(--color-white);
+    border: 2px solid var(--color-red);
+    background-color: var(--color-red);
+}
+.btn-outline-danger {
+    color: var(--color-red);
+    border: 2px solid var(--color-red);
+    background-color: var(--color-white);
+}
